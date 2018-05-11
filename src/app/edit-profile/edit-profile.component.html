@@ -1,0 +1,229 @@
+<mat-card>
+   <mat-card-content>
+     <h1>Edit Profile</h1>
+     <mat-divider></mat-divider><br>
+     <div class="form-controls" fxLayout fxLayout.xs="column"
+     fxLayoutGap="30px"
+     fxLayoutGap.xs="0">
+  <mat-form-field fxFlex="33">
+    <input matInput placeholder="First Name">
+  </mat-form-field>
+  <mat-form-field fxFlex="33">
+    <input matInput placeholder="Last Name">
+  </mat-form-field>
+</div>
+
+<br>
+     <div class="form-controls" fxLayout fxLayout.xs="column"
+     fxLayoutGap="30px"
+     fxLayoutGap.xs="0">
+  <mat-form-field fxFlex="33">
+    <input matInput placeholder="Email Address">
+  </mat-form-field>
+  <mat-form-field fxFlex="33">
+    <input matInput placeholder="Contact Number">
+  </mat-form-field>
+  
+</div><br>
+<div class="form-controls" fxLayout fxLayout.xs="column"
+     fxLayoutGap="30px"
+     fxLayoutGap.xs="0">
+     <mat-form-field fxFlex="33"> 
+  <input matInput (focus)="picker.open()" [matDatepicker]="picker" placeholder="Date of Birth">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+  <mat-radio-group fxFlex="33">
+  <mat-radio-button value="1">Male </mat-radio-button> &nbsp;
+  <mat-radio-button value="2">Female</mat-radio-button>
+</mat-radio-group>
+  
+  
+</div><br>
+<div class="form-controls" fxLayout fxLayout.xs="column"
+     fxLayoutGap="30px"
+     fxLayoutGap.xs="0">
+  <mat-form-field fxFlex="69">
+     <textarea matInput placeholder="About Me"></textarea>
+  </mat-form-field>
+  </div><br>
+  <div class="form-controls" fxLayout fxLayout.xs="column"
+     fxLayoutGap="30px"
+     fxLayoutGap.xs="0">
+  <mat-form-field fxFlex="33">
+    <input matInput placeholder="Address Line 1">
+  </mat-form-field>
+  <mat-form-field fxFlex="33">
+    <input matInput placeholder="Address Line 2">
+  </mat-form-field>
+  
+</div><br>
+
+<div class="form-controls" fxLayout fxLayout.xs="column"
+     fxLayoutGap="30px"
+     fxLayoutGap.xs="0">
+  <mat-form-field fxFlex="33">
+    <input type="text" placeholder="City" aria-label="Select City" matInput [formControl]="myControl" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option [value]="option">
+        Vadodara
+      </mat-option>
+      <mat-option [value]="option">
+        Ahemdabad
+      </mat-option>
+      <mat-option [value]="option">
+        Surat
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <mat-form-field fxFlex="33">
+    <input type="text" placeholder="Country" aria-label="Select Country" matInput [formControl]="myControl" [matAutocomplete]="autocountry">
+    <mat-autocomplete #autocountry="matAutocomplete">
+      <mat-option [value]="option">
+        India
+      </mat-option>
+      <mat-option [value]="option">
+        China
+      </mat-option>
+      <mat-option [value]="option">
+        Dubai
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  
+</div><br>
+  <button mat-raised-button color="primary">Submit</button>
+
+   </mat-card-content>
+
+</mat-card><br>
+<mat-card>
+   <mat-card-content>
+     <h1>Stepper Edit</h1>
+     <mat-divider></mat-divider><br>
+
+     <mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Fill Basic details</ng-template>
+       <div class="form-controls" fxLayout fxLayout.xs="column"
+     fxLayoutGap="30px"
+     fxLayoutGap.xs="0">
+  <mat-form-field fxFlex="33">
+    <input matInput placeholder="First Name">
+  </mat-form-field>
+  <mat-form-field fxFlex="33">
+    <input matInput placeholder="Last Name">
+  </mat-form-field>
+</div>
+
+<br>
+     <div class="form-controls" fxLayout fxLayout.xs="column"
+     fxLayoutGap="30px"
+     fxLayoutGap.xs="0">
+  <mat-form-field fxFlex="33">
+    <input matInput placeholder="Email Address">
+  </mat-form-field>
+  <mat-form-field fxFlex="33">
+    <input matInput placeholder="Contact Number">
+  </mat-form-field>
+  
+</div><br>
+      <div>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Fill out your address</ng-template>
+      
+<div class="form-controls" fxLayout fxLayout.xs="column"
+     fxLayoutGap="30px"
+     fxLayoutGap.xs="0">
+  <mat-form-field fxFlex="33">
+    <input matInput placeholder="Address Line 1">
+  </mat-form-field>
+  <mat-form-field fxFlex="33">
+    <input matInput placeholder="Address Line 2">
+  </mat-form-field>
+  
+</div><br>
+
+<div class="form-controls" fxLayout fxLayout.xs="column"
+     fxLayoutGap="30px"
+     fxLayoutGap.xs="0">
+  <mat-form-field fxFlex="33">
+    <input type="text" placeholder="City" aria-label="Select City" matInput [formControl]="myControl" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option [value]="option">
+        Vadodara
+      </mat-option>
+      <mat-option [value]="option">
+        Ahemdabad
+      </mat-option>
+      <mat-option [value]="option">
+        Surat
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <mat-form-field fxFlex="33">
+    <input type="text" placeholder="Country" aria-label="Select Country" matInput [formControl]="myControl" [matAutocomplete]="autocountry">
+    <mat-autocomplete #autocountry="matAutocomplete">
+      <mat-option [value]="option">
+        India
+      </mat-option>
+      <mat-option [value]="option">
+        China
+      </mat-option>
+      <mat-option [value]="option">
+        Dubai
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  
+</div><br>
+
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Your Personal Details</ng-template>
+    
+<br>
+<div class="form-controls" fxLayout fxLayout.xs="column"
+     fxLayoutGap="30px"
+     fxLayoutGap.xs="0">
+     <mat-form-field fxFlex="33"> 
+  <input matInput (focus)="picker2.open()" [matDatepicker]="picker2" placeholder="Date of Birth">
+  <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+  <mat-datepicker #picker2></mat-datepicker>
+</mat-form-field>
+  <mat-radio-group fxFlex="33">
+  <mat-radio-button value="1">Male </mat-radio-button> &nbsp;
+  <mat-radio-button value="2">Female</mat-radio-button>
+</mat-radio-group>
+  
+  
+</div><br>
+<div class="form-controls" fxLayout fxLayout.xs="column"
+     fxLayoutGap="30px"
+     fxLayoutGap.xs="0">
+  <mat-form-field fxFlex="69">
+     <textarea matInput placeholder="About Me"></textarea>
+  </mat-form-field>
+  </div><br>
+
+
+
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-raised-button color="primary" (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
+   </mat-card-content>
+</mat-card>

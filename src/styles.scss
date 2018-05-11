@@ -1,0 +1,116 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@import url('//fonts.googleapis.com/icon?family=Material+Icons');
+@include mat-core();
+
+$primary: mat-palette($mat-indigo, 500);
+$accent:  mat-palette($mat-indigo, 500, A200, A400);
+$warn:    mat-palette($mat-red, 500);
+
+$theme: mat-light-theme($primary, $accent, $warn);
+$primary-color: mat-color($primary);
+
+@include angular-material-theme($theme);
+
+body {
+    font-family: $mat-font-family;
+    font-weight: normal;
+    margin: 0;
+}
+
+h1, h2, h3, h4 {
+    font-weight: normal;
+}
+.mainconts{
+    padding: 15px;
+}
+.wraper {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.is-mobile{
+    .toolbar {
+  position: fixed;
+  z-index: 2;
+}
+.sidenav-container {
+  flex: 1 0 auto;
+}
+} 
+
+h1{
+ &.app-name {
+  margin-left: 8px;
+}
+}
+
+.sidenav-container {
+  flex: 1;
+}
+
+.sidenavmain{
+    background: mat-color($primary);
+   
+    max-width: 250px;
+    min-width: 250px;
+    width:20%;
+    .mat-card{
+        text-align: center;
+        background: mat-color($primary, lighter);
+    }
+    .mat-card-avatar{
+        max-height:150px;
+        max-width:150px;
+        height: auto;
+        width: 100%;
+    }
+    .mat-nav-list {
+        a{
+            display: block;           
+            border-bottom: 1px solid mat-color($primary, lighter);
+            color:#fff;
+            .mat-icon{
+                vertical-align: bottom;
+                margin-right: 10px;
+            }
+            
+        }   
+        
+    }
+}
+.topbar-spacer{
+     flex: 1 1 auto;
+}
+.dashstas{
+    
+    h1{
+        margin: 0;
+        font-size: 3.5vh;
+        text-align: right;
+        .mat-icon{
+        font-size:2em;
+        margin-right: 20px;
+    }
+        span{
+            margin-top:-10px;
+        }
+        small{
+            
+            font-size: 0.5em;
+            
+        }
+    }
+}
+.mat-card-header{
+    border-bottom:1px solid #ccc; 
+    margin-bottom: 15px;
+}
+.mat-chip{
+    margin-bottom:10px !important;
+}
